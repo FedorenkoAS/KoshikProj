@@ -38,6 +38,7 @@ public class ActionsWithOurWebElements {
         try {
 //            boolean a = element.isDisplayed();
 //            boolean b = element.isEnabled();
+            webDriverWait.until(ExpectedConditions.visibilityOf(element));
             return element.isDisplayed() && element.isEnabled();
         } catch (Exception e) {
             return false;
