@@ -11,7 +11,6 @@ public class City24Category extends ParentPage{
     @FindBy(id = "1")
     WebElement mobileCategory;
 
-
     public void clickElementMobileCategory(){
         actionsWithOurWebElements.clickOnWebElement(mobileCategory);
     }

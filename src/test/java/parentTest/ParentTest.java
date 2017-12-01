@@ -1,5 +1,6 @@
 package parentTest;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,6 +24,9 @@ public class ParentTest {
     public City24MobileKyivstar city24MobileKyivstar;
     public ListOfAddedPaymentsPage listOfAddedPaymentsPage;
     public ModalWindowGenerateCode modalWindowGenerateCode;
+    public City24FreeRequisitesPage city24FreeRequisitesPage;
+    public SupportPage supportPage;
+    private boolean isTestPass = false;
 
 
     @Before
@@ -41,6 +45,8 @@ public class ParentTest {
         city24MobileKyivstar = new City24MobileKyivstar(driver);
         listOfAddedPaymentsPage = new ListOfAddedPaymentsPage(driver);
         modalWindowGenerateCode = new ModalWindowGenerateCode(driver);
+        city24FreeRequisitesPage = new City24FreeRequisitesPage(driver);
+        supportPage = new SupportPage(driver);
     }
 
     @After
@@ -52,7 +58,14 @@ public class ParentTest {
        if(actual != expected) {
        }
         Assert.assertThat(message, actual, is(expected));
-        boolean isTestPass = true;
+        isTestPass = true;
+    }
+
+    protected void checkAcceptanceCriteria(String message, String actual, String expected){
+        if (!actual.equals(expected)) {
+        }
+        Assert.assertThat(message, actual, CoreMatchers.is (expected));
+        isTestPass = true;
     }
 
 }

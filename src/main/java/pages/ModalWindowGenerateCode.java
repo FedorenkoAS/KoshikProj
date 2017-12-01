@@ -10,7 +10,7 @@ public class ModalWindowGenerateCode extends ParentPage {
         super(driver);
     }
 
-    @FindBy(className = "code_bild")
+    @FindBy(xpath = ".//*[@class = 'code_bild']")
     WebElement codeBild;
 
     public boolean isGenerateCodePresent(){

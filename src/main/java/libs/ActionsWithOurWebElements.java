@@ -36,6 +36,8 @@ public class ActionsWithOurWebElements {
 
     public boolean isElementPresent(WebElement element) {
         try {
+//            boolean a = element.isDisplayed();
+//            boolean b = element.isEnabled();
             return element.isDisplayed() && element.isEnabled();
         } catch (Exception e) {
             return false;
